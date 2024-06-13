@@ -1,17 +1,15 @@
 import { ComponentProps } from "react";
 
-interface foldingCardType extends ComponentProps<"div"> {
-  time: number;
-}
+interface BodyType extends ComponentProps<"div"> {}
 
-export default function FoldingCard({ time, className }: foldingCardType) {
+export default function Body({ children, className }: BodyType) {
   return (
     <section
       className={`${className} relative flex flex-col items-center justify-center text-white transition-all duration-1000`}
     >
       <TopSection />
       <span className="absolute z-20 font-mono text-6xl font-bold">
-        {Number(time) < 10 ? `0${time}` : time}
+        {children}
       </span>
       <BottomSection />
     </section>
