@@ -6,6 +6,7 @@ const setPathName = (dir: string) => {
 };
 
 export default defineConfig({
+  base: "/Happy-birthday-2024/",
   plugins: [react()],
   resolve: {
     alias: {
