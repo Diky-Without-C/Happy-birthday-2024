@@ -1,0 +1,133 @@
+:root {
+  --box-tape-color: #daa520;
+  --box-back-color: #bb0606;
+}
+
+.side-0 > div,
+.side-2 > div {
+  background: var(--box-back-color);
+}
+
+.side > div {
+  border-radius: 0;
+}
+
+.side-0 {
+  transform-origin: top left;
+  transform: rotateY(45deg) skewY(-15deg) translate(calc(180% + 0.25rem), 20%);
+}
+
+.side-1 {
+  transform-origin: top right;
+  transform: rotateY(45deg) skewY(15deg);
+  z-index: 40;
+}
+
+.side-2 {
+  transform-origin: top left;
+  transform: rotateY(45deg) skewY(-15deg);
+  z-index: 40;
+}
+
+.side-3 {
+  transform-origin: top right;
+  transform: rotateY(45deg) skewY(15deg) translate(calc(-180% - 0.25rem), 20%);
+}
+
+.side:before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: 12%;
+  z-index: 99;
+  background: var(--box-tape-color);
+  animation: tapeVertical 3s;
+}
+
+.side:after {
+  content: "";
+  position: absolute;
+  width: 12%;
+  height: inherit;
+  z-index: 99;
+  background: var(--box-tape-color);
+  animation: tapeHorizontal 3s;
+}
+
+@keyframes tapeVertical {
+  0%,
+  75% {
+    width: 0;
+  }
+  100% {
+    width: inherit;
+  }
+}
+
+@keyframes tapeHorizontal {
+  0%,
+  75% {
+    height: 0;
+  }
+  100% {
+    height: inherit;
+  }
+}
+
+/* cover box */
+.box-cover {
+  transform: rotateX(65deg) translateY(-120%);
+}
+
+.popUp {
+  animation: popUp 2.5s;
+}
+
+.tape::before {
+  animation: tapeHorizontal 5s;
+}
+
+.tape::after {
+  animation: tapeVertical 5s;
+}
+
+.tape :nth-child(1)::before {
+  animation: tapeHorizontal 6.5s;
+}
+
+.tape :nth-child(2)::before {
+  animation: tapeVertical 6.5s;
+}
+
+@keyframes popUp {
+  0%,
+  50% {
+    z-index: 0;
+    transform: scale(0) translateY(-200%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wiggle {
+  animation: wiggling 1s ease-in-out infinite;
+}
+
+@keyframes wiggling {
+  20% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
