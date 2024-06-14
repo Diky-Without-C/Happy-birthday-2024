@@ -3,15 +3,19 @@ import countdownTimerUtils from "@utils/countdownTimerUtils";
 
 const TARGET_DATE = import.meta.env.VITE_TARGET_DATE;
 
-export default function useCountdown(initial_value: any) {
-  const [currentTime, setCurrentTime] = useState(initial_value);
+interface initialValueType {
+  [key: string]: any;
+}
+
+export default function useCountdown(initial_value: initialValueType) {
+  const [timeLeft, setTimeLeft] = useState(initial_value);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(countdownTimerUtils(TARGET_DATE));
+      setTimeLeft(countdownTimerUtils(TARGET_DATE));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  return [currentTime];
+  return { timeLeft };
 }

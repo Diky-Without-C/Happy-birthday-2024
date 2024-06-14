@@ -20,7 +20,7 @@ const initialvalue: countdownType = {
 };
 
 export default function CountDownTimer({ isStop }: countDownTimerType) {
-  const [timeLeft] = useCountdown(initialvalue);
+  const { timeLeft } = useCountdown(initialvalue);
   const timeLeftKeys = Object.keys(timeLeft);
   const timeLeftValues = Object.values(timeLeft);
 

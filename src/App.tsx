@@ -7,7 +7,7 @@ import Confetti from "react-confetti";
 
 export default function App() {
   const { width, height } = useResizeWindow();
-  const [timeLeft] = useCountdown({});
+  const { timeLeft } = useCountdown({});
   const { data } = useGlobalContext();
 
   const checkIsCountdownEnd = () => {
