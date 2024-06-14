@@ -1,4 +1,4 @@
-import { useState, ComponentProps } from "react";
+import { ComponentProps } from "react";
 import { useGlobalContext } from "@context/globalVariable";
 
 interface boxType extends ComponentProps<"div"> {
