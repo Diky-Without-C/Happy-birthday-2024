@@ -1,6 +1,6 @@
 import Box from "@/components/Box";
+import CountDownTimer from "@/components/CountdownTimer";
 import { useGlobalContext } from "@context/globalVariable";
-import CountDownTimer from "@/components/CountDownTimer";
 import useCountdown from "@hooks/useCountdown";
 import useResizeWindow from "@hooks/useResizeWindow";
 import Confetti from "react-confetti";

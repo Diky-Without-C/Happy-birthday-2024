@@ -1,33 +1,8 @@
-import { ComponentProps } from "react";
-import { useGlobalContext } from "@context/globalVariable";
-
-interface boxType extends ComponentProps<"div"> {
+interface coverType {
   isStop: boolean;
 }
 
-interface boxCoverType {
-  isStop: boolean;
-}
-
-export default function Box({ children, isStop }: boxType) {
-  const { setData } = useGlobalContext();
-
-  function handleClick() {
-    setData((prev) => ({ ...prev, isBoxOpen: true }));
-  }
-
-  return (
-    <div
-      onClick={handleClick}
-      className="flex size-40 scale-[0.7] items-center justify-center md:scale-100"
-    >
-      <BoxCover isStop={isStop} />
-      {children}
-    </div>
-  );
-}
-
-function BoxCover({ isStop }: boxCoverType) {
+export default function Cover({ isStop }: coverType) {
   return (
     <section className={`${isStop ? "popUp" : "opacity-0"} absolute z-50`}>
       <div className={`box-cover`}>
