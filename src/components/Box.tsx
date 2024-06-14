@@ -10,14 +10,10 @@ interface boxCoverType {
 }
 
 export default function Box({ children, isStop }: boxType) {
-  const [isOpen, setIsOpen] = useState(false);
   const { setData } = useGlobalContext();
 
   function handleClick() {
-    console.log(true);
-
-    setIsOpen(true);
-    setData((prev) => ({ ...prev, isBoxOpen: isOpen }));
+    setData((prev) => ({ ...prev, isBoxOpen: true }));
   }
 
   return (
