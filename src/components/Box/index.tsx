@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { useGlobalContext } from "@context/globalVariable";
+import useGlobalContext from "@context/globalVariable";
 import Cover from "./Cover";
 
 interface boxType extends ComponentProps<"div"> {

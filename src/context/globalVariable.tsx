@@ -15,7 +15,7 @@ const defaultState: GlobalState = {
 
 const GlobalContext = createContext<GlobalState>(defaultState);
 
-export default function GlobalProvider({ children }: { children: ReactNode }) {
+export function GlobalProvider({ children }: { children: ReactNode }) {
   const [data, setDataState] = useState<Record<string, any>>({});
 
   const setData = (newData: Record<string, any>) => {
@@ -29,4 +29,5 @@ export default function GlobalProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export const useGlobalContext = () => useContext(GlobalContext);
+const useGlobalContext = () => useContext(GlobalContext);
+export default useGlobalContext;

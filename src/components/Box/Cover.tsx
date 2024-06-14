@@ -1,4 +1,4 @@
-import { useGlobalContext } from "@/context/globalVariable";
+import useGlobalContext from "@/context/globalVariable";
 
 interface coverType {
   isStop: boolean;
