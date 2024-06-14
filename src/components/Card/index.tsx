@@ -3,6 +3,7 @@ import Body from "./Body";
 import Text from "./Text";
 
 interface cardType extends ComponentProps<"div"> {
+  index: number;
   isStop: boolean;
   heading: string;
   paragraph: string;
@@ -10,6 +11,7 @@ interface cardType extends ComponentProps<"div"> {
 
 export default function Card({
   heading,
+  index,
   isStop,
   paragraph,
   ...props
@@ -17,7 +19,7 @@ export default function Card({
   return (
     <section {...props} className="flex flex-col items-center">
       <Body
-        className={`${isStop ? `side side-${props.key} h-28 w-32` : "mx-1 h-32 w-28"} `}
+        className={`${isStop ? `side side-${index} h-28 w-32` : "mx-1 h-32 w-28"} `}
       >
         {heading}
       </Body>

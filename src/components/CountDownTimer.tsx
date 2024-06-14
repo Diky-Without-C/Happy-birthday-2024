@@ -33,6 +33,7 @@ export default function CountDownTimer({ isStop }: countDownTimerType) {
           <Card
             heading={Number(time) < 10 ? `0${time}` : `${time}`}
             paragraph={timeLeftKeys[index]}
+            index={index}
             isStop={isStop}
             key={index}
           />

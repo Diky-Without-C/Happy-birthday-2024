@@ -36,7 +36,7 @@ function BoxCover({ isStop }: boxCoverType) {
     <section className={`${isStop ? "popUp" : "opacity-0"} absolute z-50`}>
       <div className={`box-cover`}>
         <div
-          className={`tape relative flex size-[8.5rem] rotate-45 items-center justify-center bg-red-700 before:absolute before:h-full before:w-4 before:bg-yellow-500 after:absolute after:h-4 after:w-full after:bg-yellow-500`}
+          className={`tape relative flex size-32 rotate-45 items-center justify-center bg-red-700 before:absolute before:h-full before:w-4 before:bg-yellow-500 after:absolute after:h-4 after:w-full after:bg-yellow-500`}
         >
           <SideCoverLeft />
           <SideCoverRight />
