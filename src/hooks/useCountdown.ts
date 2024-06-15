@@ -7,15 +7,23 @@ interface initialValueType {
   [key: string]: any;
 }
 
-export default function useCountdown(initial_value: initialValueType) {
+export default function useCountdown(initial_value: initialValueType = {}) {
   const [timeLeft, setTimeLeft] = useState(initial_value);
+
+  const checkIsCountdownEnd = () => {
+    const timeValues = Object.values(timeLeft);
+    return timeValues.length ? timeValues.every((value) => value === 0) : false;
+  };
+
+  const isCountdownEnd = checkIsCountdownEnd();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(countdownTimerUtils(TARGET_DATE));
+      const currentTime = countdownTimerUtils(TARGET_DATE);
+      setTimeLeft(currentTime);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  return { timeLeft };
+  return { timeLeft, isCountdownEnd };
 }

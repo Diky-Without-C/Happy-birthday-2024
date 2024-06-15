@@ -6,10 +6,11 @@ interface coverType {
 
 export default function Cover({ isStop }: coverType) {
   const { data } = useGlobalContext();
+  const { isBoxOpen } = data;
 
   return (
     <section
-      className={` ${isStop ? "popUp" : "opacity-0"} ${data.isBoxOpen && "-translate-x-1/2 -translate-y-full -rotate-45 transition-all duration-500"} absolute z-50`}
+      className={` ${isStop ? "popUp" : "opacity-0"} ${isBoxOpen && "-translate-x-1/2 -translate-y-full -rotate-45 transition-all duration-500"} absolute z-50`}
     >
       <div className={`box-cover`}>
         <div
