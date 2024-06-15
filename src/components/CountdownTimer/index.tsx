@@ -1,5 +1,5 @@
+import Card from "@components/Card";
 import useCountdown from "@hooks/useCountdown";
-import Card from "@/components/Card";
 
 interface countDownTimerType {
   isStop: boolean;

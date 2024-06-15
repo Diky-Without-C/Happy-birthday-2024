@@ -1,4 +1,3 @@
-// src/GlobalContext.tsx
 import { createContext, useContext, useState, ReactNode } from "react";
 
 interface GlobalState {
