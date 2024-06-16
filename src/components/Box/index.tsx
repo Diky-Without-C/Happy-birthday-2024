@@ -7,7 +7,8 @@ interface boxType extends ComponentProps<"div"> {
 }
 
 export default function Box({ children, isStop }: boxType) {
-  const { setData } = useGlobalContext();
+  const { data, setData } = useGlobalContext();
+  const { isBoxOpen } = data;
 
   function handleClick() {
     setData((prev) => ({ ...prev, isBoxOpen: true }));
@@ -16,7 +17,7 @@ export default function Box({ children, isStop }: boxType) {
   return (
     <div
       onClick={handleClick}
-      className="flex size-40 scale-[0.7] items-center justify-center md:scale-100"
+      className={`${isStop && !isBoxOpen && "wiggle"} flex size-40 scale-[0.7] items-center justify-center md:scale-100`}
     >
       <Cover isStop={isStop} />
       {children}

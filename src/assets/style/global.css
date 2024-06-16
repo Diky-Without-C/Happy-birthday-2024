@@ -111,23 +111,23 @@
 }
 
 .wiggle {
-  animation: wiggling 1s ease-in-out infinite;
+  animation: wiggling 1.5s ease-in-out infinite 5s;
 }
 
 @keyframes wiggling {
   20% {
     transform: rotate(5deg);
   }
-  40% {
+  30% {
     transform: rotate(-5deg);
   }
-  60% {
+  40% {
     transform: rotate(4deg);
   }
-  80% {
+  50% {
     transform: rotate(-2deg);
   }
-  100% {
+  60% {
     transform: rotate(0);
   }
 }
