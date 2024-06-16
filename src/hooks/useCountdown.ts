@@ -19,8 +19,12 @@ export default function useCountdown(initial_value: initialValueType = {}) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const currentTime = countdownTimerUtils(TARGET_DATE);
-      setTimeLeft(currentTime);
+      const { timeLeft, isEnd } = countdownTimerUtils(TARGET_DATE);
+      setTimeLeft(timeLeft);
+
+      if (isEnd) {
+        clearInterval(interval);
+      }
     }, 1000);
     return () => clearInterval(interval);
   }, []);

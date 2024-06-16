@@ -1,13 +1,4 @@
-interface countdownType {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
-export default function countdownTimerUtils(
-  target_date: string,
-): countdownType {
+export default function countdownTimerUtils(target_date: string) {
   const now = new Date();
   const target = new Date(target_date);
   const diff = target.getTime() - now.getTime();
@@ -18,7 +9,10 @@ export default function countdownTimerUtils(
   const MS_PER_DAY = MS_PER_HOUR * 24;
 
   if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      timeLeft: { days: 0, hours: 0, minutes: 0, seconds: 0 },
+      isEnd: true,
+    };
   }
 
   const days = Math.floor(diff / MS_PER_DAY);
@@ -26,5 +20,5 @@ export default function countdownTimerUtils(
   const minutes = Math.floor((diff % MS_PER_HOUR) / MS_PER_MINUTE);
   const seconds = Math.floor((diff % MS_PER_MINUTE) / MS_PER_SECOND);
 
-  return { days, hours, minutes, seconds };
+  return { timeLeft: { days, hours, minutes, seconds }, isEnd: false };
 }
