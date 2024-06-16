@@ -131,3 +131,14 @@
     transform: rotate(0);
   }
 }
+
+.curveTape {
+  animation: curvetape 6s ease-in;
+}
+
+@keyframes curvetape {
+  0%,
+  80% {
+    transform: scale(0);
+  }
+}
