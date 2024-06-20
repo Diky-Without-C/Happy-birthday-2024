@@ -11,7 +11,7 @@ export default function Cover({ isStop }: coverType) {
 
   return (
     <section
-      className={` ${isStop ? "popUp" : "opacity-0"} ${isBoxOpen && "-translate-x-1/2 -translate-y-full -rotate-45 transition-all duration-500"} absolute z-50`}
+      className={` ${isStop ? "popUp" : "opacity-0"} ${isBoxOpen && "-translate-x-1/2 -translate-y-full -rotate-45 opacity-0 transition-all duration-500"} absolute z-50`}
     >
       <CurveTape />
       <div className={`box-cover`}>
