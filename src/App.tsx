@@ -1,3 +1,4 @@
+import BirthdayCard from "@components/BirthdayCard";
 import Box from "@components/Box";
 import CountDownTimer from "@components/CountdownTimer";
 import useGlobalContext from "@context/globalVariable";
@@ -13,12 +14,13 @@ export default function App() {
 
   return (
     <main
-      className={`flex h-screen w-full items-center justify-center bg-slate-200`}
+      className={`flex h-screen w-full items-center justify-center overflow-hidden bg-slate-200`}
     >
       {isBoxOpen && <Confetti width={width} height={height} />}
       <Box isStop={isCountdownEnd}>
         <CountDownTimer isStop={isCountdownEnd} />
       </Box>
+      <BirthdayCard />
     </main>
   );
 }
