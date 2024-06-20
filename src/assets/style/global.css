@@ -111,7 +111,7 @@
 }
 
 .wiggle {
-  animation: wiggling 1.5s ease-in-out infinite 5s;
+  animation: wiggling 1.5s ease-in-out infinite 7s;
 }
 
 @keyframes wiggling {
