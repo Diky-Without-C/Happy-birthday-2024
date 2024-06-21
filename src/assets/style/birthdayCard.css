@@ -7,31 +7,8 @@
   transition: transform 4s;
 }
 
-.birthdayCard:hover {
-  transform: perspective(2500px);
-  box-shadow:
-    inset 100px 20px 100px rgba(0, 0, 0, 0.15),
-    0 10px 100px rgba(0, 0, 0, 0.3);
-}
-
-.birthdayCard:hover .cardFront {
+.cardFront.open {
   transform: rotateY(-160deg);
-}
-
-.birthdayCard:hover .front-text {
-  display: none;
-}
-
-.birthdayCard:hover .wrap-deco {
-  display: none;
-}
-
-.birthdayCard:hover .wrap-decoTwo {
-  display: none;
-}
-
-.birthdayCard:hover .plate {
-  display: none;
 }
 
 .cardFront {
