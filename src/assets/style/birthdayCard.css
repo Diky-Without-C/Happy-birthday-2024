@@ -168,7 +168,7 @@
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
 }
 
-.wishes {
+.wishes p {
+  font-family: cursive;
   position: relative;
-  margin: 25px;
 }

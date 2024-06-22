@@ -20,7 +20,7 @@ export default function BirthdayCard() {
     >
       <section className="birthdayCard">
         <FrontSection isOpen={isClick} />
-        <InsideSection />
+        <InsideSection isOpen={isClick} />
       </section>
     </section>
   );
