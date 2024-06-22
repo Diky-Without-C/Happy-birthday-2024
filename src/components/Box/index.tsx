@@ -11,7 +11,7 @@ export default function Box({ children, isStop }: boxType) {
   const { isBoxOpen } = data;
 
   function handleClick() {
-    setData((prev) => ({ ...prev, isBoxOpen: true }));
+    if (isStop) setData((prev) => ({ ...prev, isBoxOpen: true }));
   }
 
   return (
