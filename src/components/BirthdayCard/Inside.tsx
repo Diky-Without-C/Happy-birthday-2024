@@ -6,7 +6,8 @@ interface isOpenType {
 }
 
 export default function InsideSection({ isOpen }: isOpenType) {
-  const text = messages.map((message) => [message, 1500]).flat();
+  const text = messages.flat();
+
   return (
     <div className="cardInside absolute left-0 top-0 flex h-full w-full flex-col bg-white">
       <div className="mt-4 text-center">
