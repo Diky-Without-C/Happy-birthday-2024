@@ -18,7 +18,7 @@
   width: 270px;
   height: 110px;
   position: absolute;
-  bottom: -10px;
+  transform: translateY(-100%);
   left: -10px;
   background-color: #ccc;
   border-radius: 50%;
@@ -125,7 +125,7 @@
   border-bottom-right-radius: 40px;
 }
 
-.candle {
+.chocolate-cake .candle {
   background-color: var(--candle-color);
   width: 16px;
   height: 50px;
@@ -136,7 +136,7 @@
   z-index: 10;
 }
 
-.candle:before {
+.chocolate-cake .candle:before {
   content: "";
   position: absolute;
   top: 0;
@@ -147,7 +147,7 @@
   background-color: #8c080d;
 }
 
-.flame {
+.chocolate-cake .flame {
   position: absolute;
   background-color: orange;
   width: 15px;

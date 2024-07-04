@@ -5,23 +5,37 @@ import InsideSection from "./Inside";
 import "@assets/style/birthdayCard.css";
 
 export default function BirthdayCard() {
-  const [isClick, setIsClick] = useState(false);
-  const { data } = useGlobalContext();
-  const { isBoxOpen } = data;
+  const [isOpen, setIsOpen] = useState(false);
+  const { data, setData } = useGlobalContext();
+  const { isBoxOpen, isCardOpen } = data;
+
+  function handleOpen() {
+    setIsOpen((prev) => !prev);
+  }
 
   function handleClick() {
-    setIsClick((prev) => !prev);
+    setData((prev) => ({ ...prev, isCardOpen: true }));
   }
 
   return (
     <section
-      onClick={handleClick}
-      className={`${isBoxOpen ? "popUp block" : "hidden"} absolute z-50 origin-center`}
+      className={`${isCardOpen ? "opacity-0" : "opacity-100"} absolute flex flex-col items-center transition-all duration-500`}
     >
-      <section className="birthdayCard">
-        <FrontSection isOpen={isClick} />
-        <InsideSection isOpen={isClick} />
+      <section
+        onClick={handleOpen}
+        className={`${isBoxOpen ? "popUp block" : "hidden"} z-50 origin-center`}
+      >
+        <section className="birthdayCard">
+          <FrontSection isOpen={isOpen} />
+          <InsideSection isOpen={isOpen} />
+        </section>
       </section>
+      <button
+        onClick={handleClick}
+        className="fadeIn mt-2 rounded-xl bg-blue-600 px-4 py-2 text-base font-bold text-white"
+      >
+        Next
+      </button>
     </section>
   );
 }

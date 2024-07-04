@@ -11,7 +11,7 @@ export default function App() {
   const { width, height } = useResizeWindow();
   const { isCountdownEnd } = useCountdown();
   const { data } = useGlobalContext();
-  const { isBoxOpen } = data;
+  const { isBoxOpen, isCardOpen } = data;
 
   return (
     <main
@@ -21,8 +21,8 @@ export default function App() {
       <Box isStop={isCountdownEnd}>
         <CountDownTimer isStop={isCountdownEnd} />
       </Box>
-      <Cake />
-      {/* <BirthdayCard /> */}
+      {isBoxOpen && <BirthdayCard />}
+      {isCardOpen && <Cake />}
     </main>
   );
 }
