@@ -19,7 +19,7 @@ export default function Box({ children, isStop }: boxType) {
       onClick={handleClick}
       className={`${isStop && !isBoxOpen && "wiggle"} flex size-40 scale-[0.7] items-center justify-center md:scale-100`}
     >
-      <Cover isStop={isStop} />
+      {isStop && <Cover isStop={isStop} />}
       {children}
     </div>
   );
