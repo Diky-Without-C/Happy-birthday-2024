@@ -5,6 +5,7 @@ import useGlobalContext from "@context/globalVariable";
 import useCountdown from "@hooks/useCountdown";
 import useResizeWindow from "@hooks/useResizeWindow";
 import Confetti from "react-confetti";
+import Cake from "./components/Cake";
 
 export default function App() {
   const { width, height } = useResizeWindow();
@@ -20,7 +21,8 @@ export default function App() {
       <Box isStop={isCountdownEnd}>
         <CountDownTimer isStop={isCountdownEnd} />
       </Box>
-      <BirthdayCard />
+      <Cake />
+      {/* <BirthdayCard /> */}
     </main>
   );
 }
