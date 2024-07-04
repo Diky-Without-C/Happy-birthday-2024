@@ -2,7 +2,7 @@
   "homepage": "https://Diky-Without-C.github.io/Happy-birthday-2024",
   "name": "happy-birthday-2024",
   "private": true,
-  "version": "1.7.5",
+  "version": "1.10.6",
   "type": "module",
   "scripts": {
     "predeploy": "pnpm run build",
