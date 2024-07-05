@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <main
-      className={`flex h-screen w-full items-center justify-center overflow-hidden bg-slate-200`}
+      className={`flex h-screen w-full items-center justify-center overflow-hidden bg-slate-300`}
     >
       {isBoxOpen && <Confetti width={width} height={height} />}
       <Box isStop={isCountdownEnd}>

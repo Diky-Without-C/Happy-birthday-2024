@@ -30,12 +30,14 @@ export default function BirthdayCard() {
           <InsideSection isOpen={isOpen} />
         </section>
       </section>
-      <button
-        onClick={handleClick}
-        className="fadeIn mt-2 rounded-xl bg-blue-600 px-4 py-2 text-base font-bold text-white"
-      >
-        Next
-      </button>
+      {isOpen && (
+        <button
+          onClick={handleClick}
+          className="fadeIn mt-2 rounded-xl bg-blue-600 px-4 py-2 text-base font-bold text-white"
+        >
+          Next
+        </button>
+      )}
     </section>
   );
 }
