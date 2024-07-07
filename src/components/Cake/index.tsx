@@ -24,7 +24,7 @@ export default function Cake() {
 
   return (
     <>
-      <h1 className="absolute top-20 text-2xl">
+      <h1 className="absolute top-20 text-center text-2xl">
         Blow the candle and make your wish
       </h1>
       <section onClick={handleClick} className={`popUp chocolate-cake`}>
